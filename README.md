@@ -27,8 +27,7 @@ A bag, bank, and guild bank replacement for **World of Warcraft 3.3.5a** on **[A
 ## Installation
 
 1. Download this repo.
-   - Easiest: click the green "Code" button on GitHub, then "Download ZIP", and unzip it.
-   - Or clone it: `git clone https://github.com/beebsis/AscensionBags-release.git`
+   - Release: Go to [releases](https://github.com/beebsis/AscensionBags-release/releases) and downlaod the latest version and unzip it.
 2. Copy both the `AscensionBags` and `Syndicator335` folders into your `Interface/AddOns/` directory. Both are required - AscensionBags is a pure UI layer on top of Syndicator335's data tracking, and won't work without it. After copying, you should have `Interface/AddOns/AscensionBags/` and `Interface/AddOns/Syndicator335/` sitting side by side, each with its own `.toc` file directly inside it.
 3. Fully restart the WoW client (see [Notes](#notes) - `/reload` alone is not always enough right after adding new files).
 4. Enable both addons on the character-select AddOns screen.
