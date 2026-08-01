@@ -758,6 +758,7 @@ end
 
 local function AddToolbar(view, isBank)
     local f = view.f
+    local tmogBtn
 
     local gear = B.TitleIconButton(f, B.ASSETS.."Cog",
         "Options", function() B.ToggleOptions() end)
@@ -792,7 +793,7 @@ local function AddToolbar(view, isBank)
     view.transferBtn = transBtn
 
     if not isBank then
-        local tmogBtn = B.TitleIconButton(f, "Interface\\Icons\\INV_Misc_Statue_02",
+        tmogBtn = B.TitleIconButton(f, "Interface\\Icons\\INV_Misc_Statue_02",
             "Collect all transmog appearances from bags", function()
                 if view.offline then return end
                 B.Guard("CollectAllTransmog", CollectAllTransmog)
@@ -1032,9 +1033,7 @@ local function AddToolbar(view, isBank)
                 cfg.showBagRow = not cfg.showBagRow
                 view.UpdateBagRow()
             end)
-        bagsBtn:SetPoint("LEFT", f:GetName() and select(1, f:GetRegions()) and f or f, "TOPLEFT", PAD + 20, -(PAD + 8))
-        bagsBtn:ClearAllPoints()
-        bagsBtn:SetPoint("RIGHT", transBtn, "LEFT", -3, 0)
+        bagsBtn:SetPoint("RIGHT", tmogBtn, "LEFT", -3, 0)
     end
 
     if not isBank then
