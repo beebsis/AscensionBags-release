@@ -1,6 +1,6 @@
 local B = AscensionBags
 
-B.ASSETS = "Interface\\AddOns\\AscensionBags\\AscensionBags\\Assets\\"
+B.ASSETS = "Interface\\AddOns\\AscensionBags\\Assets\\"
 
 B.PANEL_BD = {
     bgFile=B.ASSETS.."Skins\\dark-backgroundfile",
