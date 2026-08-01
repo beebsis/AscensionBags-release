@@ -3,7 +3,6 @@ local S = Syndicator335
 local Log, Guard = B.Log, B.Guard
 
 local COLS, BTN = 12, 37
-local MAX_COLS  = 6
 local BTN_PAD   = 2
 local PAD       = 10
 local TITLE_H   = 24
@@ -577,7 +576,8 @@ local function RefreshImpl(view)
         for _, c in ipairs(rest) do seq[#seq+1] = {cat = c} end
         if present[EMPTY_LABEL] then seq[#seq+1] = {cat = EMPTY_LABEL} end
 
-        local availWidth = view.f:GetWidth() - PAD * 2
+        local availWidth  = view.f:GetWidth() - PAD * 2
+        local maxBlockCols = math.max(1, math.floor((availWidth + BTN_PAD) / (BTN + BTN_PAD)))
         local BLOCK_GAP  = 14
         local rowX, rowH = 0, 0
         local function NewRow()
@@ -616,7 +616,7 @@ local function RefreshImpl(view)
             local n = items and #items or 0
             if n == 0 then return end
 
-            local blockCols = math.min(n, MAX_COLS)
+            local blockCols = math.min(n, maxBlockCols)
             local rows = math.ceil(n / blockCols)
 
             local hdr = AcquireHeader(view)

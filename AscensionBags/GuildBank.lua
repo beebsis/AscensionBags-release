@@ -3,7 +3,6 @@ local S = Syndicator335
 local Log, Guard = B.Log, B.Guard
 
 local GB_COLS   = 14
-local GB_MAX_COLS = 6
 local GB_SLOTS  = 98
 local BTN       = 37
 local BTN_PAD   = 2
@@ -306,12 +305,13 @@ function B.RefreshGuildBank()
             local HEADER_H   = 16
             local BLOCK_GAP  = 14
             local availWidth = frame:GetWidth() - PAD * 2
+            local maxBlockCols = math.max(1, math.floor((availWidth + BTN_PAD) / (BTN + BTN_PAD)))
             local y = gridTop
             local rowX, rowH = 0, 0
             for _, cat in ipairs(order) do
                 local slotList = groups[cat]
                 local n = #slotList
-                local blockCols = math.min(n, GB_MAX_COLS)
+                local blockCols = math.min(n, maxBlockCols)
                 local rows = math.ceil(n / blockCols)
 
                 local hdr = frame.AcquireHeader()
