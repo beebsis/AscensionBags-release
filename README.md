@@ -26,9 +26,22 @@ A from-scratch bag, bank, and guild bank replacement for **World of Warcraft 3.3
 
 ## Installation
 
-1. Copy both the `AscensionBags` and `Syndicator335` folders into your `Interface/AddOns/` directory.
-2. Fully restart the WoW client (see [Notes](#notes) - `/reload` alone is not always enough right after adding new files).
-3. Enable both addons on the character-select AddOns screen.
+1. Download this repo.
+   - Easiest: click the green "Code" button on GitHub, then "Download ZIP", and unzip it.
+   - Or clone it: `git clone https://github.com/beebsis/AscensionBags-release.git`
+2. Copy both the `AscensionBags` and `Syndicator335` folders into your `Interface/AddOns/` directory. Both are required - AscensionBags is a pure UI layer on top of Syndicator335's data tracking, and won't work without it. After copying, you should have `Interface/AddOns/AscensionBags/` and `Interface/AddOns/Syndicator335/` sitting side by side, each with its own `.toc` file directly inside it.
+3. Fully restart the WoW client (see [Notes](#notes) - `/reload` alone is not always enough right after adding new files).
+4. Enable both addons on the character-select AddOns screen.
+5. Log in. Use `/ascbags` (or `/abags`) to open the bag window, and `/ascbags options` to open settings.
+
+### Updating
+
+Download the latest version the same way and overwrite both folders. Your saved settings, categories, and profiles are stored separately by the WoW client and are not affected by overwriting the addon files.
+
+### Troubleshooting
+
+- "attempt to call a nil value" errors right after installing: you likely only used `/reload`. Do a full client restart instead.
+- Bags window will not open: make sure both `AscensionBags` and `Syndicator335` are enabled on the character-select AddOns screen, not just one of them.
 
 ## Usage
 
